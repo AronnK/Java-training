@@ -63,4 +63,5 @@ class MOL {
     } // main method can be overloaded, non static main method cannot be overloaded
 }
 // int add (int a) and double add (int a) looks like it might work but dif in
-// return type isnt enuf, the args must be diff.
+// return type isnt enuf, the args must be diff.echo "# Java-training" >>
+// README.md
