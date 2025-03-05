@@ -52,5 +52,6 @@ class Test {
         System.out.println("Enter the no: ");
         int n = sc.nextInt();
         Perfect.Get(n);
+        sc.close();
     }
 }
