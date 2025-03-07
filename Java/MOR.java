@@ -205,4 +205,3 @@ class Developer extends Employee{
         return 2000 + hr;
     }
 }
-
