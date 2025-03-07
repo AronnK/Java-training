@@ -5,6 +5,7 @@ public class Pattern {
         butterfly(n);
     }
 
+    @SuppressWarnings("unused")
     static void left_triangle(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n - i; j++) {
@@ -17,6 +18,7 @@ public class Pattern {
         }
     }
 
+    @SuppressWarnings("unused")
     static void center_triangle(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n - i; j++) {
@@ -29,6 +31,7 @@ public class Pattern {
         }
     }
 
+    @SuppressWarnings("unused")
     static void center_odd_triangle(int n) {
         n = (2 * n - 1);
         for (int i = 1; i <= n; i += 2) {
@@ -42,6 +45,7 @@ public class Pattern {
         }
     }
 
+    @SuppressWarnings("unused")
     static void center_odd_hollow_triangle(int n) {
         n = (2 * n - 1);
         for (int i = 1; i <= n; i += 2) {
@@ -58,6 +62,7 @@ public class Pattern {
         }
     }
 
+    @SuppressWarnings("unused")
     static void left_hollow_triangle(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n - i; j++) {
@@ -73,6 +78,7 @@ public class Pattern {
         }
     }
 
+    @SuppressWarnings("unused")
     static void center_inv_triangle(int n) {
         for (int i = n; i >= 1; i--) {
             for (int j = 1; j <= n - i; j++) {
@@ -84,7 +90,8 @@ public class Pattern {
             System.out.println();
         }
     }
-
+    
+    @SuppressWarnings("unused")
     static void center_inv_hollow_triangle(int n) {
         for (int i = n; i >= 1; i--) {
             for (int j = 1; j <= n - i; j++) {
@@ -100,6 +107,7 @@ public class Pattern {
         }
     }
 
+    @SuppressWarnings("unused")
     static void sandglass(int n) {
         for (int i = n; i >= 1; i--) {
             for (int j = 1; j <= n - i; j++) {

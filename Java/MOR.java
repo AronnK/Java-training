@@ -166,6 +166,7 @@
 //     }
 // }
 
+@SuppressWarnings("unused")
 class MOR{
     public static void main(String [] args){
     Employee e = new Employee();
@@ -189,7 +190,7 @@ class Manager extends Employee{
     Manager(int bonus){
         this.bonus = bonus;
     }
-
+    @Override
     int cal(){
         return 2000 + bonus;
     }
@@ -200,7 +201,7 @@ class Developer extends Employee{
     public Developer(int hr) {
         this.hr = hr*50;
     }
-    
+    @Override
     int cal(){
         return 2000 + hr;
     }
