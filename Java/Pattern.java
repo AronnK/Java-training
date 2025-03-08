@@ -2,21 +2,71 @@ public class Pattern {
 
     public static void main(String[] args) {
         int n = 5;
-        butterfly(n);
+        combined_pattern(n);
     }
 
     @SuppressWarnings("unused")
+    // static void left_triangle(int n) {
+    //     for (int i = 1; i <= n; i++) {
+    //         for (int j = 1; j <= n - i; j++) {
+    //             System.out.print(" ");
+    //         }
+    //         for (int k = 1; k <= i; k++) {
+    //             System.out.print("*");
+    //         }
+    //         System.out.println();
+    //     }
+    // }
     static void left_triangle(int n) {
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n - i; j++) {
-                System.out.print(" ");
-            }
-            for (int k = 1; k <= i; k++) {
-                System.out.print("*");
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j <= i; j++) {
+                System.out.print("* ");
             }
             System.out.println();
         }
     }
+
+    // Right triangle
+    static void right_triangle(int n) {
+        for(int i = 0; i < n; i++) {
+            // Print spaces first
+            for(int j = n-i-1; j > 0; j--) {
+                System.out.print("  ");
+            }
+            // Print stars
+            for(int k = 0; k <= i; k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Inverted left triangle
+    static void inverted_left_triangle(int n) {
+        for(int i = n; i > 0; i--) {
+            for(int j = 0; j < i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Inverted right triangle
+    static void inverted_right_triangle(int n) {
+        for(int i = n; i > 0; i--) {
+            // Print spaces first
+            for(int j = 0; j < n-i; j++) {
+                System.out.print("  ");
+            }
+            // Print stars
+            for(int k = 0; k < i; k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+
 
     @SuppressWarnings("unused")
     static void center_triangle(int n) {
@@ -139,6 +189,47 @@ public class Pattern {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= (2 * n - 1); j++) {
                 System.out.print((j == 1 || j == i || j == n || j == n - i + 1) ? "* " : "  ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Combined pattern of all four triangles
+    static void combined_pattern(int n) {
+        // Upper part (inverted triangles)
+        for(int i = n; i > 0; i--) {
+            // Left inverted triangle
+            for(int j = 0; j < i; j++) {
+                System.out.print("* ");
+            }
+            
+            // Spaces between triangles
+            for(int j = 0; j < 2*(n-i); j++) {
+                System.out.print("  ");
+            }
+            
+            // Right inverted triangle
+            for(int j = 0; j < i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        
+        // Lower part (normal triangles)
+        for(int i = 0; i < n; i++) {
+            // Left triangle
+            for(int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            
+            // Spaces between triangles
+            for(int j = 0; j < 2*(n-i-1); j++) {
+                System.out.print("  ");
+            }
+            
+            // Right triangle
+            for(int j = 0; j <= i; j++) {
+                System.out.print("* ");
             }
             System.out.println();
         }

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 // Interfaces are syntactically similar to class, which are used for multiple inheritance.
 // Only structure (declaration), no definition or instance variable.
 // Lack of instance variable and their methods are declared without any body.
@@ -385,32 +387,101 @@
 // }
 
 // Problem 3:
-interface Emp{
+// interface Emp{
+//     String getName();
+//     double getSalary();
+// }
+
+// class Interface implements Emp{
+//     String name; double salary;
+//     Interface(String name, double salary){
+//         this.name = name;
+//         this.salary = salary;
+//     }
+
+//     @Override
+//     public String getName(){
+//         return name;
+//     }
+
+//     @Override
+//     public double getSalary(){
+//         return salary;
+//     }
+
+//     public static void main(String[] args) {
+//         Interface i = new Interface("Adithya", 75846921);
+//         System.out.println(i.getName());
+//         System.out.println(String.valueOf(i.getSalary()));
+
+//     }
+// }
+
+interface Emp {
     String getName();
     double getSalary();
+    String getDept();
+    String getPosition();
 }
 
-class Interface implements Emp{
-    String name; double salary;
-    Interface(String name, double salary){
+class Interface implements Emp {
+    private String name;
+    private double salary;
+    private String dept;
+    private String position;
+    
+    Interface(String name, double salary, String dept, String position) {
         this.name = name;
         this.salary = salary;
+        this.dept = dept;
+        this.position = position;
     }
 
     @Override
-    public String getName(){
+    public String getName() {
         return name;
     }
 
     @Override
-    public double getSalary(){
+    public double getSalary() {
         return salary;
     }
 
-    public static void main(String[] args) {
-        Interface i = new Interface("Adithya", 75846921);
-        System.out.println(i.getName());
-        System.out.println(String.valueOf(i.getSalary()));
+    @Override
+    public String getDept() {
+        return dept;
+    }
 
+    @Override
+    public String getPosition() {
+        return position;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter employee name: ");
+        String name = scanner.nextLine();
+        
+        System.out.print("Enter employee salary: ");
+        double salary = scanner.nextDouble();
+        scanner.nextLine(); // Consume the leftover newline
+        
+        System.out.print("Enter employee department: ");
+        String dept = scanner.nextLine();
+        
+        System.out.print("Enter employee position: ");
+        String position = scanner.nextLine();
+        
+        Interface emp = new Interface(name, salary, dept, position);
+        
+        // Display all employee details
+        System.out.println("\nEmployee Details:");
+        System.out.println("Name: " + emp.getName());
+        System.out.println("Salary: $" + emp.getSalary());
+        System.out.println("Department: " + emp.getDept());
+        System.out.println("Position: " + emp.getPosition());
+        
+        scanner.close();
     }
 }
