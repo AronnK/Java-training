@@ -1,0 +1,182 @@
+// In java string is an object.
+// The characters are stored in 16 bits.
+
+/* Creation of strings */
+
+// 2 ways: 
+
+// 1. String literal
+// Created using double quotes. Eg: String s = "Hello";
+
+// Each time you create a string literal, the JVM checks the string literal pool to see if an object with the same value already exists.
+// If it does, the reference to the existing object is returned.
+// If it doesn't, a new object is created and added to the pool.
+// Each time you create a string object, a new object is created in the heap memory.
+
+// 2. String object (new keyword).
+// Created using new keyword. Eg: String s = new String("Hello");
+
+/* Methods available in String class */
+
+// 1. length()
+// Returns the number of characters in the string.
+// Eg: String s = "Hello";
+// System.out.println(s.length()); // Output: 5
+
+// 2. charAt()
+// Returns the character at the specified index.
+// Eg: String s = "Hello";
+// System.out.println(s.charAt(0)); // Output: H
+
+// 3. substring()
+// Returns the substring of the string.     
+// Eg: String s = "Hello";
+// System.out.println(s.substring(0, 4)); // Output: Hell
+
+// 4. indexOf()
+// Returns the index of the first occurrence of the specified character.
+// Eg: String s = "Hello";
+// System.out.println(s.indexOf('e')); // Output: 1
+
+// 5. lastIndexOf()
+// Returns the index of the last occurrence of the specified character.
+// Eg: String s = "Hello";
+// System.out.println(s.lastIndexOf('e')); // Output: 3
+
+// 6. equals()
+// Returns true if the strings are equal.   
+// Eg: String s1 = "Hello";
+// String s2 = "Hello";
+// System.out.println(s1.equals(s2)); // Output: true
+
+// 7. equalsIgnoreCase()
+// Returns true if the strings are equal ignoring the case. 
+// Eg: String s1 = "Hello"; 
+// String s2 = "hello";
+// System.out.println(s1.equalsIgnoreCase(s2)); // Output: true
+
+// 8. toLowerCase()
+// Returns the string in lowercase. 
+// Eg: String s = "Hello";
+// System.out.println(s.toLowerCase()); // Output: hello
+
+// 9. toUpperCase()
+// Returns the string in uppercase.
+// Eg: String s = "Hello";
+// System.out.println(s.toUpperCase()); // Output: HELLO
+
+// 10. trim()
+// Returns the string without leading and trailing spaces.
+// Eg: String s = " Hello ";
+// System.out.println(s.trim()); // Output: Hello
+
+// 11. split()
+// Returns the array of strings after splitting the string by the specified delimiter.
+// Eg: String s = "Hello World";
+// String[] arr = s.split(" ");
+// System.out.println(Arrays.toString(arr)); // Output: [Hello, World]
+
+// 12. replace()
+// Returns the string after replacing the specified character with the new character.
+// Eg: String s = "Hello World";
+// System.out.println(s.replace("World", "Java")); // Output: Hello Java
+
+// 13. contains()
+// Returns true if the string contains the specified character.
+// Eg: String s = "Hello World";
+// System.out.println(s.contains("World")); // Output: true 
+
+// 14. startsWith()
+// Returns true if the string starts with the specified character.
+// Eg: String s = "Hello World";
+// System.out.println(s.startsWith("Hello")); // Output: true   
+
+// 15. endsWith()
+// Returns true if the string ends with the specified character.
+// Eg: String s = "Hello World";
+// System.out.println(s.endsWith("World")); // Output: true 
+
+// 16. join()
+// Returns the string after joining the specified array of strings.
+// Eg: String[] arr = {"Hello", "World"};
+// System.out.println(String.join(" ", arr)); // Output: Hello World    
+
+// 17. format()
+// Returns the formatted string.
+// Eg: String s = "Hello %s";
+// System.out.println(String.format(s, "World")); // Output: Hello World    
+
+// 18. valueOf()
+// Returns the string representation of the specified value.
+// Eg: int a = 10;
+// System.out.println(String.valueOf(a)); // Output: 10 
+
+// 19. intern()
+// Returns the interned string.
+// Eg: String s = "Hello";
+// System.out.println(s.intern()); // Output: Hello 
+
+// 20. isEmpty()
+// Returns true if the string is empty.
+// Eg: String s = "";
+// System.out.println(s.isEmpty()); // Output: true
+
+// 21. isBlank()
+// Returns true if the string is empty or contains only white spaces.
+// Eg: String s = " ";
+// System.out.println(s.isBlank()); // Output: true 
+
+// 22. strip()
+// Returns the string without leading and trailing white spaces.
+// Eg: String s = " Hello ";
+// System.out.println(s.strip()); // Output: Hello
+
+// 23. getChars()
+// Copies the characters from the string to the specified array.
+// Eg: String s = "Hello";
+// char[] arr = new char[5];
+// s.getChars(0, 5, arr, 0);
+// System.out.println(Arrays.toString(arr)); // Output: [H, e, l, l, o]
+
+// 24. getBytes()
+// Converts the string to a byte array.
+// Eg: String s = "Hello";
+// byte[] arr = s.getBytes();
+// System.out.println(Arrays.toString(arr)); // Output: [72, 101, 108, 108, 111]
+
+// 25. compareTo()
+// Compares the string with the specified string.
+// Eg: String s1 = "Hello";
+// String s2 = "Hello";
+// System.out.println(s1.compareTo(s2)); // Output: 0   
+
+// 26. compareToIgnoreCase()
+// Compares the string with the specified string ignoring the case.
+// Eg: String s1 = "Hello";
+// String s2 = "hello";
+// System.out.println(s1.compareToIgnoreCase(s2)); // Output: 0 
+
+// 27. regionMatches()
+// Checks if the substring of the string matches the substring of the specified string.
+// Eg: String s1 = "Hello World";
+// String s2 = "World";
+// System.out.println(s1.regionMatches(5, s2, 0, 5)); // Output: true
+
+// 28. boolean regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)
+// Checks if the substring of the string matches the substring of the specified string.
+// Eg: String s1 = "Hello World";
+// String s2 = "World";
+// System.out.println(s1.regionMatches(true, 5, s2, 0, 5)); // Output: true 
+
+// 29. startsWith()
+// Checks if the string starts with the specified character.
+// Eg: String s = "Hello World";
+// System.out.println(s.startsWith("Hello")); // Output: true
+
+// 30. endsWith()
+// Checks if the string ends with the specified character.  
+// Eg: String s = "Hello World";
+// System.out.println(s.endsWith("World")); // Output: true 
+
+
+
