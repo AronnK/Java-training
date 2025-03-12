@@ -29,9 +29,10 @@
 // System.out.println(s.charAt(0)); // Output: H
 
 // 3. substring()
-// Returns the substring of the string.     
+// Returns the substring of the string. It has two forms.     
 // Eg: String s = "Hello";
-// System.out.println(s.substring(0, 4)); // Output: Hell
+// System.out.println(s.substring(0, 4)); // Output: Hell, gets from starts index to end index - 1 (0 is start index and 4 is end index).
+// System.out.println(s.substring(2)); // Output: llo, gets from start index to end of the string (2 is start index).
 
 // 4. indexOf()
 // Returns the index of the first occurrence of the specified character.
@@ -66,23 +67,28 @@
 // System.out.println(s.toUpperCase()); // Output: HELLO
 
 // 10. trim()
-// Returns the string without leading and trailing spaces.
+// Returns a copy if invoking string from which any leading and trailing white spaces are removed.
 // Eg: String s = " Hello ";
 // System.out.println(s.trim()); // Output: Hello
 
 // 11. split()
-// Returns the array of strings after splitting the string by the specified delimiter.
-// Eg: String s = "Hello World";
-// String[] arr = s.split(" ");
+// Divides the string at the specified regex and returns an array of strings.
+// If i give negative number as limit, it will return all the strings.
+// If i give 0 as limit, it will return all the strings except the last one.
+// If i give positive number as limit, it will return the strings upto the limit.
+// Eg:String s = "Hello World";
+// String[] arr = s.split(" ", 0);
 // System.out.println(Arrays.toString(arr)); // Output: [Hello, World]
 
 // 12. replace()
-// Returns the string after replacing the specified character with the new character.
+// A string replace (char original, char replacement).
+// String replace (CharSequence target, CharSequence replacement).
+// It replaces all the occurrences of the original character with the replacement character.
 // Eg: String s = "Hello World";
 // System.out.println(s.replace("World", "Java")); // Output: Hello Java
 
 // 13. contains()
-// Returns true if the string contains the specified character.
+// Checks if the specified string is present in the string or not.
 // Eg: String s = "Hello World";
 // System.out.println(s.contains("World")); // Output: true 
 
@@ -97,9 +103,9 @@
 // System.out.println(s.endsWith("World")); // Output: true 
 
 // 16. join()
-// Returns the string after joining the specified array of strings.
+// Returns a new string with the given elements joined by the specified delimiter.
 // Eg: String[] arr = {"Hello", "World"};
-// System.out.println(String.join(" ", arr)); // Output: Hello World    
+// System.out.println(String.join(" ", arr)); // Output: Hello World   
 
 // 17. format()
 // Returns the formatted string.
@@ -112,7 +118,7 @@
 // System.out.println(String.valueOf(a)); // Output: 10 
 
 // 19. intern()
-// Returns the interned string.
+// Ensures that all strings having the same content use the same memory location.
 // Eg: String s = "Hello";
 // System.out.println(s.intern()); // Output: Hello 
 
@@ -120,6 +126,7 @@
 // Returns true if the string is empty.
 // Eg: String s = "";
 // System.out.println(s.isEmpty()); // Output: true
+// A non initialized string is not an empty string, using isEmpty() will return error.
 
 // 21. isBlank()
 // Returns true if the string is empty or contains only white spaces.
@@ -146,6 +153,11 @@
 
 // 25. compareTo()
 // Compares the string with the specified string.
+// Compares the strings lexicographically.
+// The comparision is based on the unicode value of each character in the string (ASCII value).
+// Returns 0 if the strings are equal.
+// Returns positive value if the string is lexicographically greater than the specified string.
+// Returns negative value if the string is lexicographically less than the specified string.
 // Eg: String s1 = "Hello";
 // String s2 = "Hello";
 // System.out.println(s1.compareTo(s2)); // Output: 0   
@@ -178,5 +190,23 @@
 // Eg: String s = "Hello World";
 // System.out.println(s.endsWith("World")); // Output: true 
 
+// 31. matches()
+// Checks if the string matches the specified regex.
+// String regex = "^J..a$"; // ^ is the start of the string, . is any character and the no of . indicates the no of characters, a is the end of the string.
+// String s1 = "Java";
+// System.out.println(s1.matches(regex));
+
+// 32. replaceFirst()
+// Replaces the first occurrence of the specified character with the new character.
+// String regex, String replacement.
+// Eg: String s = "Hello World";
+// System.out.println(s.replaceFirst("World", "Java")); // Output: Hello Java
+
+// 33. replaceAll()
+// Replaces all the occurrences of the specified regex with the new character.
+// Eg: String s = "Hello World";
+// System.out.println(s.replaceAll("World", "Java")); // Output: Hello Java
 
 
+// getChars, getBytes, equals, equalsIgnoreCase, regionMatches, startsWith, endsWith, indexOf, lastIndexOf, join, isEmpty, intern, substring, contains, 
+// matches, compareTo, compareToIgnoreCase, replace, replaceFirst, replaceAll, trim, split
