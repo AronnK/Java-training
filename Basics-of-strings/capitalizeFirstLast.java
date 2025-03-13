@@ -11,3 +11,5 @@ public class capitalizeFirstLast {
         System.out.println(capitalizeFL(s));
     }
 }
+// Time Complexity: O(n)
+// Space Complexity: O(n)   
